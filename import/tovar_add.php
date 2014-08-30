@@ -16,15 +16,11 @@
 				->Fetch();
 		if (!entero::CheckIssetTovarInBitrix($id)) {
 			$tovar = entero::GetItem("/item/{$id}");
-//			import::TovarAddFromArray($tovar, $section_xml_id);
+			$id = import::TovarAddFromArray($tovar, $section_xml_id);
 		}
 
 	}
 ?>
-
-	Количество товаров в разделе - <?= import::CountTovarsInSection($section_id); ?>
-
-
-
-
+	Количество товаров в разделе - <?= import::CountTovarsInSection($section_id); ?><br>
+	Последний добавленный товар - ID = <?=$id?>
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/epilog_after.php"); ?>

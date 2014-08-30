@@ -10,8 +10,8 @@
 	//$result = entero::GetItemReg('/item/33699');
 	//import::TovarUpdate(entero::GetItemReg("/item/33908"),5829);
 //	echo 123;
-	$result = entero::GetItems('698');
-//	$result = entero::GetItem('/item/40768');
+//	$result = entero::GetItems('698');
+	$result = entero::GetItem('/item/37512');
 	//$result = entero::GetItemsReg('869');
 	//$result = entero::GetItemsFromOnePage("/list/660");
 	//$result = entero::GetRazdels($_SERVER['DOCUMENT_ROOT'] . "/import/sections_w_tovars.php");

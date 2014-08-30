@@ -23,26 +23,57 @@
 		while ($el = $res->Fetch()) {
 			$xml_ids[] = $el['XML_ID'];
 		}
-		$res = entero::GetItems($section['XML_ID']);
-		?>
-		<script type = "text/javascript" src = "/bitrix/templates/Productions/js/jquery-1.6.2.min.js"></script>
+		//		$res = entero::GetItems($section['XML_ID']);
+		$res = unserialize(file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/import/items/" . $section['XML_ID'] . ".php"));
+	}?>
+	<html>
+	<head>
+		<script type = "text/javascript" src = "/bitrix/templates/Productions/js/jquery-1.4.3.min.js"></script>
 		<script type = "text/javascript">
-			alert('123');
-			var tovars = new Array();
-			var section_id = <?=$id?>;
-			<? foreach ($res as $vol) : ?>
-			tovars[] = "<?=str_replace("/item/","",$vol['lINK'])?>";
-			<? endforeach ?>
-			$(tovars).each(function (key, vol) {
-				console(key);
-			})
+			$(function () {
+				<?if(count($res)):?>
+				var elements = [
+					<?foreach($res as $key => $vol):?>
+					<?=preg_replace("|/item/(.*)|","$1",$vol['lINK'])?><?=$key+1 < count($res)?",":''?>
+					<?endforeach?>
+				];
+				<?endif?>
+
+
+				$('#get').click(function () {
+					post('348', 0, elements);
+					return false;
+				});
+			});
+			function post(section_id, index, elements) {
+
+				$.ajax({
+							url: '/import/tovar_add.php',
+							data: "tovar_xml_id=" + elements[index] + "&section_id=" + section_id,
+							success: function (data) {
+								$('#result').html(data);
+								index = index + 1;
+								if (index < elements.length) {
+									post(section_id, index, elements)
+								} else {
+									$('#result').html(data + ' - загрузка завершена');
+								}
+							}
+						}
+				);
+			}
+
 		</script>
-		<? //        LocalRedirect('/catalog/' . $_REQUEST['section_id'] . "/");
-	}
-?>
-	<pre>
-	<? print_r($res); ?>
-	</pre>
+	</head>
+	<body>
+
+	<a href = "#" id = "get">Запрос</a>
+	<div id = "result"></div>
+	<pre><? print_r($res) ?></pre>
+	</body>
+	</html>
+
+
 
 
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/epilog_after.php"); ?>

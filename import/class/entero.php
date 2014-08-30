@@ -268,7 +268,7 @@
 					$htmldom->clear();
 					$page_url = $url . "?p={$i}";
 					$htmldom  = file_get_html($page_url);
-					foreach ($htmldom->find('div.m a') as $hrefs) {
+					foreach ($htmldom->find('div.slot div.m a') as $hrefs) {
 						//						echo $hrefs->innertetxt;
 						$result[] = array(
 								'NAME' => $hrefs->plaintext,
