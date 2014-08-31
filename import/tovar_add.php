@@ -1,8 +1,10 @@
+<?$time_begin = microtime();?>
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php"); ?>
 <? require_once($_SERVER["DOCUMENT_ROOT"] . "/import/class/import.php"); ?>
 <? require_once($_SERVER["DOCUMENT_ROOT"] . "/import/class/entero.php"); ?>
 <?
 	//	ini_set('allow_url_fopen', '1');
+
 	CModule::IncludeModule('iblock');
 
 	if ($_REQUEST['tovar_xml_id']) {
@@ -22,5 +24,7 @@
 	}
 ?>
 	Количество товаров в разделе - <?= import::CountTovarsInSection($section_id); ?><br>
-	Последний добавленный товар - ID = <?=$id?>
+	Последний добавленный товар - ID = <?=$id?><br/>
+	Всего товаров загружено - <?=CIBlockElement::GetList(null,array('IBLOCK_ID' => import::$iblock_id))->SelectedRowsCount()?><br/>
+	Товар спарсен и загржен за <?=microtime() - $time_begin?>
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/epilog_after.php"); ?>
