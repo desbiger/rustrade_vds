@@ -45,7 +45,7 @@
 		if (file_exists($_SERVER['DOCUMENT_ROOT'] . "/import/items/" . $section['XML_ID'] . ".php")) {
 			$res = unserialize(file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/import/items/" . $section['XML_ID'] . ".php"));
 		}
-		elseif ($section['DEPTH_LEVEL'] == 2) {
+		elseif ($section['DEPTH_LEVEL'] == 2 || $_REQUEST['section_id'] == 348) {
 			$res = entero::GetItems($section['XML_ID']);
 		}
 	}?>

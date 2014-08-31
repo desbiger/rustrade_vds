@@ -309,18 +309,24 @@ input {
 }
 .tovar{
 	width:150px;
+    height: 183px;
 	font:12px Arial, Helvetica, sans-serif;
 	color:#595959;
 	font-weight:bold;
 	display:inline-block;
-	*float:left;
+	float:left;
 	border-right:2px solid #ededed;
 	padding-right:2%;
 	margin-right:10px;
 	margin-bottom:40px;
 }
+.tovar a{
+    display: inline-block;
+    width: 100%;
+}
 .cat_tov{
-    width: 970px;
+    width: 735px;
+    display: inline-block;
 }
 .cat_tov img{
 	border:1px solid #ededed;
@@ -606,4 +612,8 @@ input {
 .clear{
     clear:both;
     margin-top: 10px;
+}
+.filter{
+    margin-top: 35px;
+    background-color: #ffffff!important;
 }
