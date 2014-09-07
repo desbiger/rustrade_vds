@@ -5,7 +5,7 @@
 
 <? $section = CIBlockSection::GetList(null, array(
 	'ID' => $_REQUEST['SECTION_ID'],
-	"IBLOCK_ID" => 14
+	"IBLOCK_ID" => 2
 ), null, array('UF_*'))
 		->GetNext(); ?>
 <?

@@ -1,0 +1,19 @@
+.razdel{
+    width: 450px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.razdel > a{
+    font-size: 18px;
+}
+.razdel > span{
+    display: block;
+}
+.razdel > span > a{
+    text-decoration: none;
+    color: black;
+}
+.razdel > span > a:hover{
+    text-decoration: underline;
+}

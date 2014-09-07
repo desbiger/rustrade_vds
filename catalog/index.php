@@ -12,8 +12,12 @@
 	<? $APPLICATION->IncludeComponent("my:catalog.filter", "", Array()); ?>
 <? endif ?>
 
-
-<?$APPLICATION->IncludeComponent("bitrix:catalog.section", ".default", Array(
+<? if ($_REQUEST['SECTION_ID']) {
+	$template = '.default';
+}else{
+	$template = 'list_categories';
+} ?>
+<?$APPLICATION->IncludeComponent("bitrix:catalog.section", $template, Array(
 		"AJAX_MODE" => "N",
 		"IBLOCK_TYPE" => "products",
 		"IBLOCK_ID" => "2",
@@ -84,5 +88,7 @@
 		"AJAX_OPTION_STYLE" => "Y",
 		"AJAX_OPTION_HISTORY" => "N"
 ));
-?><?require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");
+?>
+
+<?require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");
 ?>
