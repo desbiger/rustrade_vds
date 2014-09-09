@@ -2,9 +2,8 @@
 	die();
 } ?>
 
-
 <? $section = CIBlockSection::GetList(null, array(
-	'ID' => $_REQUEST['SECTION_ID'],
+	'SECTION_ID' => $_REQUEST['SECTION_ID'],
 	"IBLOCK_ID" => 2
 ), null, array('UF_*'))
 		->GetNext(); ?>
@@ -44,14 +43,14 @@
 	}
 
 	$sub = CIBlockSection::GetList(null, array(
-			'IBLOCK_ID' => 14,
+			'IBLOCK_ID' => 2,
 			'SECTION_ID' => $_REQUEST['SECTION_ID']
 	));
 	while ($t = $sub->GetNext()) {
 		$subsections[] = $t;
 	}
 ?>
-	<!--<pre>--><?//print_r($subsections)?><!--</pre>-->
+<!--	<pre>--><?//print_r($subsections)?><!--</pre>-->
 
 <? if ($_REQUEST['ELEMENT_ID']): ?>
 	<?$APPLICATION->IncludeComponent("bitrix:catalog.element", "detail_page_of_tovars", array(
@@ -149,11 +148,11 @@
 							'width' => 150,
 							'height' => 150
 					)) ?>
-					<div class = "tovar">
+					<div class = "tovar" style="position: relative">
 						<a href = "<?= $sub['SECTION_PAGE_URL'] ?>">
 							<img src = "<?= $pic['src'] ?>">
 							<br>
-							<?= $sub['NAME'] ?>
+							<span style="position: absolute; bottom: 0"><?= $sub['NAME'] ?></span>
 						</a>
 					</div>
 
