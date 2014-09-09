@@ -34,7 +34,7 @@
  * @author S.C. Chen <me578022@gmail.com>
  * @author John Schlick
  * @author Rus Carroll
- * @version 1.5 ($Rev: 208 $)
+ * @version.php 1.5 ($Rev: 208 $)
  * @package PlaceLocalInclude
  * @subpackage simple_html_dom
  */
@@ -871,7 +871,7 @@ class simple_html_dom_node
 	 * NOTE: This will ONLY work on an IMG tag. Returns FALSE on all other tag types.
 	 *
 	 * @author John Schlick
-	 * @version April 19 2012
+	 * @version.php April 19 2012
 	 * @return array an array containing the 'height' and 'width' of the image on the page or -1 if we can't figure it out.
 	 */
 	function get_display_size()
