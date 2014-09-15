@@ -2,28 +2,32 @@
 	die();
 } ?>
 
+
 <? $section = CIBlockSection::GetList(null, array(
-	'SECTION_ID' => $_REQUEST['SECTION_ID'],
-	"IBLOCK_ID" => 2
+		'SECTION_ID' => $_REQUEST['SECTION_ID'],
+		"IBLOCK_ID" => 2
 ), null, array('UF_*'))
 		->GetNext(); ?>
 <?
 
 
 	if (!function_exists('check_show_price')) {
-		function check_show_price($section_id){
+		function check_show_price($section_id)
+		{
 			global $DB;
-			$q = "
+			$q   = "
 			SELECT
 			  *
 			FROM
 			  b_uts_iblock_14_section AS can_show_section
 			WHERE can_show_section.`VALUE_ID` = '{$section_id}'
 			";
-			$res = $DB->Query($q)->fetch();
-			if($res['UF_PRICE'] == 0){
+			$res = $DB->Query($q)
+					->fetch();
+			if ($res['UF_PRICE'] == 0) {
 				return false;
-			}else{
+			}
+			else {
 				return true;
 			}
 
@@ -50,7 +54,7 @@
 		$subsections[] = $t;
 	}
 ?>
-<!--	<pre>--><?//print_r($subsections)?><!--</pre>-->
+	<!--	<pre>--><? //print_r($subsections)?><!--</pre>-->
 
 <? if ($_REQUEST['ELEMENT_ID']): ?>
 	<?$APPLICATION->IncludeComponent("bitrix:catalog.element", "detail_page_of_tovars", array(
@@ -104,7 +108,7 @@
 			"LINK_ELEMENTS_URL" => "link.php?PARENT_ELEMENT_ID=#ELEMENT_ID#"
 	), false);?>
 <? else: ?>
-<!--	<pre>--><?//print_r($section)?><!--</pre>-->
+	<!--	<pre>--><? //print_r($section)?><!--</pre>-->
 	<div class = "_catalog">
 		<div class = "cat_tit">
 			<a href = "#">Каталог товаров</a> <img src = "/bitrix/templates/Productions/img/marker2.png" alt = "m2">
@@ -131,7 +135,7 @@
 						<? if ($section['UF_PRICE'] == '1'): ?>
 							<?= $item['PROPERTIES']['PRICE']['VALUE'] ?> р.-
 						<? endif ?>
-
+						<input type = "button" value = "В корзину" tovar = "<?= $item['ID'] ?>"/>
 					</span>
 					</div>
 
@@ -148,12 +152,13 @@
 							'width' => 150,
 							'height' => 150
 					)) ?>
-					<div class = "tovar" style="position: relative">
+					<div class = "tovar" style = "position: relative">
 						<a href = "<?= $sub['SECTION_PAGE_URL'] ?>">
 							<img src = "<?= $pic['src'] ?>">
 							<br>
-							<span style="position: absolute; bottom: 0"><?= $sub['NAME'] ?></span>
+							<span style = "position: absolute; bottom: 0"><?= $sub['NAME'] ?></span>
 						</a>
+
 					</div>
 
 				<? endforeach ?>

@@ -24,6 +24,7 @@
 	</div>
 	<?= $item['NAME'] ?><br>
 	<br>
+	<input type = "button" name = "" id = "" value="В корзину" tovar="<?=$item['ID']?>"/>
 <!--	<span class = "rr"> --><?//= $item['PRICE'] ?><!-- р.-</span>-->
 </div>
 <? endforeach ?>
