@@ -1,0 +1,25 @@
+<h2>Поступила просьба перезвонить</h2>
+<br>
+<table>
+	<tr>
+		<td>Имя</td>
+		<td>#NAME#</td>
+	</tr>
+	<tr>
+		<td>Телефон</td>
+		<td>#PHONE#</td>
+	</tr>
+	<tr>
+		<td>Адрес</td>
+		<td>#ADRESS#</td>
+	</tr>
+	<tr>
+		<td>Email</td>
+		<td>#EMAIL#</td>
+	</tr>
+	<tr>
+		<td>Примечание</td>
+		<td>#TEXT#</td>
+	</tr>
+</table>
+<hr>
