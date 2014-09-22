@@ -111,10 +111,14 @@
 	<!--	<pre>--><? //print_r($section)?><!--</pre>-->
 	<div class = "_catalog">
 		<div class = "cat_tit">
-			<a href = "#">Каталог товаров</a> <img src = "/bitrix/templates/Productions/img/marker2.png" alt = "m2">
+			<a href = "#">Каталог товаров<?= $_REQUEST['BREND'] ? " (" . $_REQUEST['BREND'] . ")" : '' ?></a> <img src =
+			                                                                                                       "/bitrix/templates/Productions/img/marker2.png"
+			                                                                                                       alt
+			                                                                                                       =
+			                                                                                                       "m2">
 		</div>
 
-		<? if (count($subsections) == 0): ?>
+		<? if (count($subsections) == 0 || $_REQUEST['BREND']): ?>
 			<div class = "cat_tov">
 				<? foreach ($arResult['ITEMS'] as $item): ?>
 					<?
