@@ -4,7 +4,7 @@
 <div class = "cat_tit">
 	<a href = "#">Популярные товары</a> <img src = "/bitrix/templates/Productions/img/marker2.png" alt = "m2">
 </div>
-<div class = "cat_tov" style="width: 925px">
+<div class = "cat_tov" style="width: 800px">
 	<? foreach ($arResult['ITEMS'] as $item): ?>
 	<?
 		$this->AddEditAction($item['ID'], $item['EDIT_LINK'], CIBlock::GetArrayByID($item["IBLOCK_ID"], "ELEMENT_EDIT"));

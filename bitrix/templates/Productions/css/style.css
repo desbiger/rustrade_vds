@@ -276,15 +276,15 @@ input {
 /*--Paging Styles--*/
 .paging {
     position: absolute;
-    bottom: 10px;
-    right: 87px;
+    bottom: -8px;
+    right: 251px;
     width: 178px;
     height: 47px;
-    z-index: 100; /*--Assures the paging stays on the top layer--*/
+    z-index: 100;
     text-align: center;
     line-height: 40px;
     background: url(paging_bg2.png) no-repeat;
-    display: none; /*--Hidden by default, will be later shown with jQuery--*/
+    display: none;
 }
 
 .paging a {
@@ -460,7 +460,7 @@ input {
     position: relative;
 }
 
-.left_index h3 {
+.left_index h3, .right h3 {
     display: block;
     font: 15px Arial, Helvetica, sans-serif;
     color: #fefefe;
@@ -745,4 +745,13 @@ input[type=button] {
 }
 .basket_table tr td{
     border-color: #d1d1d1;
+}
+
+.right{
+    width: 250px;
+    display: inline-block;
+    position: absolute;
+    float: right;
+    right: -10px;
+    top: -120px;
 }

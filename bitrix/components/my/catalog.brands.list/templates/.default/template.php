@@ -42,9 +42,6 @@
 		margin-top: 3px;
 	}
 </style>
-<div class = "cat_tit">
-	<a href = "#">Список брендов</a> <img src = "/bitrix/templates/Productions/img/marker2.png" alt = "m2">
-</div>
 <? $cur_leter = ''; ?>
 <? foreach ($arResult['ITEMS'] as $key => $brend): ?>
 <? if (substr($brend['VALUE'], 0, 1) == $cur_leter): ?>

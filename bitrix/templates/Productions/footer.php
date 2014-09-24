@@ -91,19 +91,23 @@
 
 			</div>
 			<div class="clear" style="margin-top: 10px"></div>
-			<div class="_news">
-				<?$APPLICATION->IncludeComponent(
-					"my:catalog.brands.list",
-					".default",
-					Array(
-						"PROP_ID" => "11"
-					)
-				);?>
-			</div>
-			<br/><br/>
+
 
 		</div>
 	</div>
+</div>
+<div class="right">
+	<h3>Список производителей</h3>
+	<div class="_news">
+		<?$APPLICATION->IncludeComponent(
+			"my:catalog.brands.list",
+			".default",
+			Array(
+				"PROP_ID" => "11"
+			)
+		);?>
+	</div>
+	<br/><br/>
 </div>
 <!-- .sidebar#sideLeft -->
 
