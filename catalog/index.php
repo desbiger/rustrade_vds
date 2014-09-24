@@ -23,7 +23,7 @@
 <?if ($_REQUEST['BREND']) {
 	$GLOBALS['arrFilter']['PROPERTY_BRAND'] = $_REQUEST['BREND'];
 }?>
-<?$APPLICATION->IncludeComponent("bitrix:catalog.section", ".default", array(
+<?$APPLICATION->IncludeComponent("bitrix:catalog.section", $template, array(
 		"AJAX_MODE" => "N",
 		"IBLOCK_TYPE" => "products",
 		"IBLOCK_ID" => "2",
