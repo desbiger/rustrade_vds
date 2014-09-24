@@ -96,6 +96,7 @@
 		</div>
 	</div>
 </div>
+<?if($_SERVER['REAL_FILE_PATH'] != '/catalog/detail_page.php'):?>
 <div class="right">
 	<h3>Список производителей</h3>
 	<div class="_news">
@@ -107,8 +108,8 @@
 			)
 		);?>
 	</div>
-	<br/><br/>
 </div>
+<?endif?>
 <!-- .sidebar#sideLeft -->
 
 </div>
