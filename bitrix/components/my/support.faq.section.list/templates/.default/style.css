@@ -1,0 +1,15 @@
+.base_table{
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+.base_table tr td{
+    padding: 3px;
+    text-align: left;
+    border: 1px solid black;
+    color: white;
+    font-weight: bold;
+    background-color: #0E5196;
+}
+.base_table thead tr{
+    background: #3791aa;
+}
