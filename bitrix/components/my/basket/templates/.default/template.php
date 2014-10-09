@@ -1,13 +1,15 @@
 <?
 	if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 		die();
-	}?>
+	}
+	CModule::IncludeModule('internetshop');
+?>
 
 <script type = "text/javascript">
 	$(function () {
 		$('#next_step').click(function () {
 			var form = $('#basket_form');
-			form.attr('action',"/basket/?step=2") ;
+			form.attr('action', "/basket/?step=2");
 			form.submit();
 		});
 	});
@@ -18,15 +20,20 @@
 		<h2>Корзина</h2>
 
 		<!--	<pre>--><? //print_r($arResult)?><!--</pre>-->
-		<form method = "post" id = "basket_form" action="/basket/">
+		<form method = "post" id = "basket_form" action = "/basket/">
 			<table class = "basket_table">
 				<tr>
 					<th>Модель</th>
 					<th>Количество</th>
+					<th>Стоимость</th>
 					<th></th>
 				</tr>
 
+				<?$summ = 0;?>
 				<? foreach ($arResult as $vol) : ?>
+					<? $price = Basket::factory()
+							->GetTovarPrice($vol['PROPERTY']['TOVAR']['ID']) ?>
+
 					<? $img   = CFile::ResizeImageGet($vol['PROPERTY']['TOVAR']['DETAIL_PICTURE'], array(
 							'width' => 100,
 							'height' => 100
@@ -41,7 +48,15 @@
 						<td style = "text-align: center">
 							<input class = "inp_basket" type = "text" name = "count_<?= $vol['ID'] ?>" value = "<?= $vol['PROPERTY']['QUANTITY']['VALUE'] ?>"/>
 						</td>
+						<td>
+							<?= $price ?> руб.
+							<?$summ = $summ + ($vol['PROPERTY']['QUANTITY']['VALUE'] * str_replace(" ","",$price))?>
+						</td>
 						<td style = "text-align: center"><a href = "?itemdel=<?= $vol['ID'] ?>" class = "del_basket">Удалить</a></td>
+					</tr>
+					<tr>
+						<td style="text-align: right" colspan="2">Итого:</td>
+						<td><?=preg_replace("|(.*)([0-9]{3})([0-9]{3})|s","$1 $2 $3",$summ)?> руб.</td>
 					</tr>
 				<? endforeach ?>
 			</table>
