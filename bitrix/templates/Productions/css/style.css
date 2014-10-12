@@ -359,7 +359,7 @@ input {
 
 .tovar {
     width: 150px;
-    height: 247px;
+    height: 287px;
     font: 12px Arial, Helvetica, sans-serif;
     color: #595959;
     font-weight: bold;
@@ -389,6 +389,9 @@ input {
 .rr {
     font-size: 24px;
     font-weight: normal;
+    display: inline-block;
+    position: absolute;
+    bottom: 33px;
 }
 
 .text_field {

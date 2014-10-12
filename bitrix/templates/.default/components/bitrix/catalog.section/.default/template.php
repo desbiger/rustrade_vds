@@ -3,48 +3,16 @@
 } ?>
 
 
-<? $section = CIBlockSection::GetList(null, array(
-		'SECTION_ID' => $_REQUEST['SECTION_ID'],
-		"IBLOCK_ID" => 2
-), null, array('UF_*'))
-		->GetNext(); ?>
+<?
+	$section = CIBlockSection::GetList(null, array(
+			'ID' => $_REQUEST['SECTION_ID'],
+			'IBLOCK_ID' => 2
+	), null, array('UF_*'))
+			->GetNext(); ?>
 <?
 
 
-	if (!function_exists('check_show_price')) {
-		function check_show_price($section_id)
-		{
-			global $DB;
-			$q   = "
-			SELECT
-			  *
-			FROM
-			  b_uts_iblock_14_section AS can_show_section
-			WHERE can_show_section.`VALUE_ID` = '{$section_id}'
-			";
-			$res = $DB->Query($q)
-					->fetch();
-			if ($res['UF_PRICE'] == 0) {
-				return false;
-			}
-			else {
-				return true;
-			}
 
-		}
-	}
-	function GetPictureOfSection($section_id)
-	{
-		global $DB;
-		$q   = "
-		 SELECT *  FROM b_iblock_element as el
-		 WHERE el.IBLOCK_SECTION_ID = {$section_id}
-		 AND !ISNULL(el.DETAIL_PICTURE)
-		";
-		$res = $DB->Query($q)
-				->Fetch();
-		return $res['DETAIL_PICTURE'];
-	}
 
 	$sub = CIBlockSection::GetList(null, array(
 			'IBLOCK_ID' => 2,
@@ -119,7 +87,7 @@
 		</div>
 
 		<? if (count($subsections) == 0 || $_REQUEST['BREND']): ?>
-			<div class = "cat_tov">
+			<div class = "cat_tov" >
 				<? foreach ($arResult['ITEMS'] as $item): ?>
 					<?
 					$this->AddEditAction($item['ID'], $item['EDIT_LINK'], CIBlock::GetArrayByID($item["IBLOCK_ID"], "ELEMENT_EDIT"));
@@ -131,16 +99,15 @@
 					)); ?>
 
 					<div class = "tovar" id = "<?= $this->GetEditAreaId($item['ID']); ?>">
-						<a href = "<?= $item['DETAIL_PAGE_URL'] ?>"><img src = "<?= $file['src'] ?>" alt = "1"></a>
+						<a href = "<?= $item['DETAIL_PAGE_URL'] ?>" style="height: 150px">
+							<img src = "<?= $file['src'] ?>" alt = "1">
+						</a>
 						<?= $item['NAME'] ?><br>
 						<br>
 					<span class = "rr">
-
-						<? if ($section['UF_PRICE'] == '1'): ?>
-							<?= $item['PROPERTIES']['PRICE']['VALUE'] ?> р.-
-						<? endif ?>
-						<input type = "button" value = "В корзину" tovar = "<?= $item['ID'] ?>"/>
+							<?= $section['UF_PRICE'] == '1' ? $item['PROPERTIES']['PRICE']['VALUE'] . " р.-" : '' ?>
 					</span>
+						<input type = "button" value = "В корзину" tovar = "<?= $item['ID'] ?>"/>
 					</div>
 
 				<? endforeach ?>

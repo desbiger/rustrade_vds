@@ -23,15 +23,18 @@
 <?if ($_REQUEST['BREND']) {
 	$GLOBALS['arrFilter']['PROPERTY_BRAND'] = $_REQUEST['BREND'];
 }?>
-<?$APPLICATION->IncludeComponent("bitrix:catalog.section", $template, array(
+<?$APPLICATION->IncludeComponent(
+	"bitrix:catalog.section", 
+	".default", 
+	array(
 		"AJAX_MODE" => "N",
 		"IBLOCK_TYPE" => "products",
 		"IBLOCK_ID" => "2",
 		"SECTION_ID" => $_REQUEST["SECTION_ID"],
 		"SECTION_CODE" => "",
 		"SECTION_USER_FIELDS" => array(
-				0 => "UF_PRICE",
-				1 => "",
+			0 => "UF_PRICE",
+			1 => "",
 		),
 		"ELEMENT_SORT_FIELD" => "sort",
 		"ELEMENT_SORT_ORDER" => "asc",
@@ -56,30 +59,33 @@
 		"PAGE_ELEMENT_COUNT" => "20",
 		"LINE_ELEMENT_COUNT" => "",
 		"PROPERTY_CODE" => array(
-				0 => "SPECIALOFFER",
-				1 => "PRICE",
-				2 => "PRICECURRENCY",
-				3 => "POPULAR",
-				4 => "BRAND",
-				5 => "LINE_NAME",
-				6 => "LENGTH",
-				7 => "WIDTH",
-				8 => "HEIGHT",
-				9 => "WES",
-				10 => "TEMPERATURE",
-				11 => "POWER",
-				12 => "DECRIPTION",
-				13 => "KEYWORDS",
-				14 => "VOLT",
-				15 => "OBJEM",
-				16 => "",
+			0 => "SPECIALOFFER",
+			1 => "PRICE",
+			2 => "PRICECURRENCY",
+			3 => "POPULAR",
+			4 => "BRAND",
+			5 => "LINE_NAME",
+			6 => "LENGTH",
+			7 => "WIDTH",
+			8 => "HEIGHT",
+			9 => "WES",
+			10 => "TEMPERATURE",
+			11 => "POWER",
+			12 => "DECRIPTION",
+			13 => "KEYWORDS",
+			14 => "VOLT",
+			15 => "OBJEM",
+			16 => "",
 		),
 		"OFFERS_LIMIT" => "5",
-		"PRICE_CODE" => array(),
+		"PRICE_CODE" => array(
+			0 => "PRICE",
+		),
 		"USE_PRICE_COUNT" => "N",
 		"SHOW_PRICE_COUNT" => "1",
 		"PRICE_VAT_INCLUDE" => "Y",
-		"PRODUCT_PROPERTIES" => array(),
+		"PRODUCT_PROPERTIES" => array(
+		),
 		"USE_PRODUCT_QUANTITY" => "N",
 		"CACHE_TYPE" => "N",
 		"CACHE_TIME" => "36000000",
@@ -104,7 +110,9 @@
 		"ADD_PROPERTIES_TO_BASKET" => "Y",
 		"PARTIAL_PRODUCT_PROPERTIES" => "N",
 		"AJAX_OPTION_ADDITIONAL" => ""
-), false);
+	),
+	false
+);
 ?>
 
 <?require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");

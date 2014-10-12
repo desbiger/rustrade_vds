@@ -36,24 +36,7 @@ $APPLICATION->SetTitle("Каталог");
 		"SET_TITLE" => "Y",
 		"SET_STATUS_404" => "N",
 		"ADD_SECTIONS_CHAIN" => "Y",
-			"PROPERTY_CODE" => array(
-					"PRICE",
-					"SPECIALOFFER",
-					"PRICECURRENCY",
-					"POPULAR",
-					"BRAND",
-					"LINE_NAME",
-					"LENGTH",
-					"WIDTH",
-					"HEIGHT",
-					"WES",
-					"TEMPERATURE",
-					"POWER",
-					"DECRIPTION",
-					"KEYWORDS",
-					"VOLT",
-					"OBJEM"
-			),
+		"PROPERTY_CODE" => array("PRICE","SPECIALOFFER","PRICECURRENCY","POPULAR","BRAND","LINE_NAME","LENGTH","WIDTH","HEIGHT","WES","TEMPERATURE","POWER","DECRIPTION","KEYWORDS","VOLT","OBJEM"),
 		"OFFERS_LIMIT" => "0",
 		"PRICE_CODE" => array(),
 		"USE_PRICE_COUNT" => "N",
@@ -70,6 +53,5 @@ $APPLICATION->SetTitle("Каталог");
 		"CACHE_TIME" => "36000000",
 		"CACHE_GROUPS" => "Y",
 		"USE_ELEMENT_COUNTER" => "Y"
-	),
-false
+	)
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

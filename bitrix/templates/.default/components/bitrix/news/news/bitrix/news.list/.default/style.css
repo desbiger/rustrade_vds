@@ -1,0 +1,39 @@
+.detail_text{
+    text-align: justify;
+    float: left;
+    width: 70%;
+}
+.detail_text h2{
+    /*border-bottom: 1px solid #64BEDD;*/
+
+    /*text-decoration: underline;*/
+
+}
+.news-item h2{
+    margin: 7px;
+    text-align: left;
+}
+.news-item h2 a{
+
+    color: #595959;
+    font: 14px Arial,Helvetica,sans-serif;
+    margin-right: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-decoration-color: #64BEDD;
+    /*text-decoration-style: solid;*/
+    /*text-decoration: underline;*/
+}
+.photo_pre{
+    width: 200px;
+    height: 200px;
+    margin-right: 10px;
+    float: left;
+}
+.news-item{
+    overflow: hidden;
+    clear: both;
+}
+.news{
+    width: 95%;
+}

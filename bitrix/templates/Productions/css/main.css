@@ -1,0 +1,101 @@
+#page {
+    width: 980px;
+    margin: auto;
+}
+
+#main_menu {
+    /*width: 1022px;*/
+    margin: auto;
+    height: 38px;
+}
+
+#main_menu, #main_menu a {
+    color: #575656;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+#main_menu > li {
+    height: 37px;
+    background: url(../img/menu_na.jpg) repeat-x top left;
+    background-size: 100% 100%;
+    width:178px;
+    padding-left: 6px;
+    padding-right: 18px;
+
+}
+
+#main_menu > li:hover {
+    background: url(../img/menu.jpg) repeat-x top left;
+}
+
+#main_menu > li > ul {
+    top: 0px;
+    padding-left: 30px;
+}
+
+#main_menu a, #main_menu span {
+    display: block;
+    width: 100%;
+}
+
+#main_menu >li > ul > li {
+    background: #ededed;
+    text-align: left;
+    z-index: 100;
+}
+
+#main_menu >li > ul > li:hover {
+    background: #e2e0e0;
+}
+
+#main_menu >li:hover > ul > li:first-child {
+    background-image: url(../img/cyan.jpg);
+    background-position: top;
+    background-repeat: repeat-x;
+}
+
+#main_menu >li > ul > li>ul>li {
+    background: #e2e0e0;
+}
+
+#main_menu >li > ul > li>ul>li:hover {
+    background: #d7d6d6;
+}
+
+#main_menu >li > ul > li>ul>li>ul>li {
+    background: #d7d6d6;
+}
+
+#main_menu >li > ul > li>ul>li>ul>li:hover {
+    background: #bebcbc;
+}
+
+#main_menu ul {
+    width: auto;
+}
+
+#main_menu ul li {
+    padding-right: 25px;
+}
+
+#main_menu ul li span, #main_menu ul li a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
+
+#main_menu a.down, #main_menu span.down {
+    background: url(../img/corner_down.png) right center no-repeat;
+}
+
+#main_menu a.right, #main_menu span.right {
+    background: url(../img/corner_right.png) right center no-repeat;
+}
+
+#main_menu >li> a.down, #main_menu>li>span.down {
+    height: 28px;
+    padding-top: 9px;
+}
+
+
