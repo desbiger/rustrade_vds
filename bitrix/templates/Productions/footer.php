@@ -92,22 +92,24 @@
 
 			</div>
 			<div class = "clear" style = "margin-top: 10px"></div>
-
-
+			<? if ($_REQUEST['SECTION_ID'] && !isset($_REQUEST['ELEMENT_ID'])): ?>
+				<?
+				$APPLICATION->IncludeComponent("my:catalog.filter", "", Array());
+				?>
+			<? endif ?>
 		</div>
+
 	</div>
 </div>
-<!--<pre>--><?// print_r($_SERVER) ?><!--</pre>-->
-<?if ($_SERVER['REAL_FILE_PATH'] != '/catalog/detail_page.php' && $_SERVER['SCRIPT_NAME'] != '/catalog/index.php' && (preg_match
-				("|catalog|",
-						$_SERVER['REQUEST_URI']) || $_SERVER['REQUEST_URI'] == '/')):?>
+<!--<pre>--><? // print_r($_SERVER) ?><!--</pre>-->
+<? if ($_SERVER['REAL_FILE_PATH'] != '/catalog/detail_page.php' && $_SERVER['SCRIPT_NAME'] != '/catalog/index.php' && (preg_match("|catalog|", $_SERVER['REQUEST_URI']) || $_SERVER['REQUEST_URI'] == '/')): ?>
 	<div class = "right">
 		<h3>Список производителей</h3>
 
 		<div class = "_news">
 			<?$APPLICATION->IncludeComponent("my:catalog.brands.list", ".default", Array(
-							"PROP_ID" => "11"
-					));?>
+					"PROP_ID" => "11"
+			));?>
 		</div>
 	</div>
 <? endif ?>
@@ -137,10 +139,12 @@
 			(function (d, w, c) {
 				(w[c] = w[c] || []).push(function () {
 					try {
-						w.yaCounter26288142 = new Ya.Metrika({id: 26288142,
+						w.yaCounter26288142 = new Ya.Metrika({
+							id: 26288142,
 							clickmap: true,
 							trackLinks: true,
-							accurateTrackBounce: true});
+							accurateTrackBounce: true
+						});
 					} catch (e) {
 					}
 				});

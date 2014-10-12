@@ -719,10 +719,7 @@ input {
     margin-top: 10px;
 }
 
-.filter {
-    margin-top: 35px;
-    background-color: #ffffff !important;
-}
+
 
 .image_div_detail_page {
     position: relative;
@@ -736,7 +733,7 @@ input {
     clear: both;
 }
 
-input[type=button] {
+input[type=button], .blue_button {
     display: block;
     margin: 5px;
     padding: 5px;

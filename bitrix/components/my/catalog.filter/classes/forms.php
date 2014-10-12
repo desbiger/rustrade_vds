@@ -1,4 +1,5 @@
 <?
+
 	class forms
 	{
 		static function StringArrayASort($values)
@@ -17,7 +18,7 @@
 		static function select($values, $name, $title, $ed_izm = null)
 		{
 
-			$str = "<h3><span>{$title}</span></h3>";
+			$str = "<h4><span>{$title}</span></h4>";
 			$str .= "<select name='{$name}'>
 			   <option value=''>Все</option>
 			";
@@ -36,7 +37,7 @@
 			$min         = $values_enum[0];
 			$max         = $values_enum[count($values_enum) - 1];
 			$str         = "
-			<h3><span>" . $title . "</span></h3>
+			<h4><span>" . $title . "</span></h4>
 			<script type='text/javascript'>
 			$(function(){
 			$('#slider_{$name}').slider({
@@ -61,8 +62,8 @@
 			$str .= "
 			<div class='formCost'>
 			
-			от<input name='min_{$name}' type='text' id='minCost_{$name}' value='".$_REQUEST['min_'.$name]."'/>
-			до<input name='max_{$name}' type='text' id='maxCost_{$name}' value='".$_REQUEST['max_'.$name]."'/>" . $ed_izm . "
+			от<input name='min_{$name}' type='text' id='minCost_{$name}' value='" . $_REQUEST['min_' . $name] . "'/>
+			до<input name='max_{$name}' type='text' id='maxCost_{$name}' value='" . $_REQUEST['max_' . $name] . "'/>" . $ed_izm . "
 			</div>
 			<div class='sliderCont'>
 			<div id='slider_{$name}'></div>
@@ -75,14 +76,13 @@
 
 		static function checkbox($values, $name, $title, $ed_izm = null)
 		{
-			$str = "<h3><span>" . $title . "</span></h3>";
+			$str = "<h4><span>" . $title . "</span></h4>";
 			foreach ($values as $items) {
 				$sel = in_array($items, $_REQUEST[$name]) ? "checked = 'checked'" : '';
 				$str .= "<div class='node'>
 				<input {$sel} name = '{$name}[]' type='checkbox' value='{$items}'>{$items}</div>";
 
-			}
-			;
+			};
 
 			return $str;
 		}

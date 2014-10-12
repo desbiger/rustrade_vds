@@ -11,7 +11,6 @@
 
 <? if ($_REQUEST['SECTION_ID'] || $_REQUEST['BREND']): ?>
 	<?
-//	$APPLICATION->IncludeComponent("my:catalog.filter", "", Array());
 	$template = '.default';
 	?>
 <? endif ?>
