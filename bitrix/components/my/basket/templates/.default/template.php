@@ -62,6 +62,10 @@
 				</tr>
 			</table>
 			<div class = "clear"></div>
+			<div>
+				<h2>Стомость доставки расчитывается отдельно</h2>
+				<br/>
+			</div>
 			<div class = "right_basket">
 				<input type = "submit" name = "update" value = "Обновить корзину">
 				<input type = "submit" name = "del" value = "Очистить корзину">
