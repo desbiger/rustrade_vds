@@ -54,11 +54,12 @@
 						</td>
 						<td style = "text-align: center"><a href = "?itemdel=<?= $vol['ID'] ?>" class = "del_basket">Удалить</a></td>
 					</tr>
-					<tr>
-						<td style="text-align: right" colspan="2">Итого:</td>
-						<td><?=preg_replace("|(.*)([0-9]{3})([0-9]{3})|s","$1 $2 $3",$summ)?> руб.</td>
-					</tr>
+
 				<? endforeach ?>
+				<tr>
+					<td style="text-align: right" colspan="2">Итого:</td>
+					<td><?=preg_replace("|(.*)([0-9]{3})([0-9]{3})|s","$1 $2 $3",$summ)?> руб.</td>
+				</tr>
 			</table>
 			<div class = "clear"></div>
 			<div class = "right_basket">
