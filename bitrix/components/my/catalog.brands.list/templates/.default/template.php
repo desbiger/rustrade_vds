@@ -2,7 +2,7 @@
 	die();
 } ?>
 <?
-	function ElementsCount($brend,$brend_prop_id)
+	function ElementsCount($brend, $brend_prop_id)
 	{
 		global $DB;
 		$q = "
@@ -16,11 +16,17 @@
 			AND prop.IBLOCK_ELEMENT_ID = el.ID
 		GROUP BY el.ID
 			";
-		return $DB->Query($q)->SelectedRowsCount();
+		return $DB->Query($q)
+				->SelectedRowsCount();
 	}
 
 ?>
 <style type = "text/css">
+	.breands_list {
+		/*max-height: 300px;*/
+		overflow: hidden;
+	}
+
 	.one_leter {
 		width: 50%;
 		float: left;
@@ -42,18 +48,40 @@
 		margin-top: 3px;
 	}
 </style>
-<? $cur_leter = ''; ?>
-<? foreach ($arResult['ITEMS'] as $key => $brend): ?>
-<? if (substr($brend['VALUE'], 0, 1) == $cur_leter): ?>
-	<a href = "/catalog/brends/<?= $brend['VALUE'] ?>/"><?= $brend['VALUE'] ?></a> <?=ElementsCount($brend['VALUE'],11)?><br>
-<? else: ?>
-<? $cur_leter = substr($brend['VALUE'], 0, 1) ?>
-<?= $key != 0 ? "</div>" : '' ?>
-<div class = "one_leter">
-	<h4><?= $cur_leter ?></h4>
+<script type = "text/javascript">
+	$(function () {
+		var brands_height = $('.breands_list').height();
 
-	<a href = "/catalog/brends/<?= $brend['VALUE'] ?>/"><?= $brend['VALUE'] ?></a> <?=ElementsCount($brend['VALUE'],11)?><br>
-	<? endif ?>
+		$('.breands_list').css('height', 300);
 
-	<? endforeach ?>
+		$('a.show').click(function () {
+			if ($('.breands_list').height() < brands_height) {
+				$('.breands_list').animate({'height': brands_height},200);
+				$(this).html('Скрыть')
+			} else {
+				$('.breands_list').animate({'height': 300},200);
+				$(this).html('Показать все')
+			}
+			return false;
+		});
+	});
+</script>
+<div class = "breands_list">
+	<? $cur_leter = ''; ?>
+	<? foreach ($arResult['ITEMS'] as $key => $brend): ?>
+	<? if (substr($brend['VALUE'], 0, 1) == $cur_leter): ?>
+		<a href = "/catalog/brends/<?= $brend['VALUE'] ?>/"><?= $brend['VALUE'] ?></a> <?= ElementsCount($brend['VALUE'], 11) ?><br>
+	<? else: ?>
+	<? $cur_leter = substr($brend['VALUE'], 0, 1) ?>
+	<?= $key != 0 ? "</div>" : '' ?>
+	<div class = "one_leter">
+		<h4><?= $cur_leter ?></h4>
+
+		<a href = "/catalog/brends/<?= $brend['VALUE'] ?>/"><?= $brend['VALUE'] ?></a> <?= ElementsCount($brend['VALUE'], 11) ?><br>
+		<? endif ?>
+
+		<? endforeach ?>
+	</div>
 </div>
+<br/>
+<a href = "#" class = "show">Показать все</a>
