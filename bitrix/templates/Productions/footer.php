@@ -91,12 +91,7 @@
 
 
 			</div>
-			<div class = "clear" style = "margin-top: 10px"></div>
-			<? if ($_REQUEST['SECTION_ID'] && !isset($_REQUEST['ELEMENT_ID'])): ?>
-				<?
-				$APPLICATION->IncludeComponent("my:catalog.filter", "", Array());
-				?>
-			<? endif ?>
+
 		</div>
 
 	</div>
@@ -111,6 +106,12 @@
 					"PROP_ID" => "11"
 			));?>
 		</div>
+		<div class = "clear" style = "margin-top: 10px"></div>
+		<? if ($_REQUEST['SECTION_ID'] && !isset($_REQUEST['ELEMENT_ID'])): ?>
+			<?
+			$APPLICATION->IncludeComponent("my:catalog.filter", "", Array());
+			?>
+		<? endif ?>
 	</div>
 <? endif ?>
 <!-- .sidebar#sideLeft -->
