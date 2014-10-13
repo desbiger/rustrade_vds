@@ -285,4 +285,4 @@
 
 		<div id = "container">
 			<div id = "content">
-
+<? $APPLICATION->IncludeComponent("my:catalog.filter.result", "empty", Array()); ?>
