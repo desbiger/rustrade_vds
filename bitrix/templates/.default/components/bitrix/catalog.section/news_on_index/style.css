@@ -1,0 +1,25 @@
+.news_item {
+    float: left;
+    margin-right: 60px;
+    width: 212px;
+    text-align: left;
+}
+
+.news_item h4 {
+    width: 212px;
+    height: 33px;
+    overflow: hidden
+}
+
+.news_item img {
+    height: 120px;
+    overflow: hidden;
+}
+.news_item a{
+    font: 12px Arial, Helvetica, sans-serif;
+    color: #595959;
+
+}
+.news_item p{
+    text-align: left;
+}

@@ -1,0 +1,36 @@
+.catalog-price {
+	 color:red;
+    font-size: 25px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.properties{
+    width: 100%;
+    border-collapse: collapse;
+}
+.properties tr td{
+    text-align: left;
+    padding: 5px;
+
+}
+.properties tr:nth-child(odd) td{
+    background-color: #dddbdd;
+}
+.aksess {
+    text-align: center;
+    border: 1px solid #cfe8e6;
+    width: 150px;
+    height: 200px;
+    padding: 7px;
+    display: inline-block;
+    float: left;
+    margin: 5px;
+
+}
+.aksess .img{
+    height: 100px;
+    width: 150px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}

@@ -11,7 +11,6 @@
 
 <? if ($_REQUEST['SECTION_ID'] || $_REQUEST['BREND']): ?>
 	<?
-//	$APPLICATION->IncludeComponent("my:catalog.filter", "", Array());
 	$template = '.default';
 	?>
 <? endif ?>
@@ -75,7 +74,9 @@
 				16 => "",
 		),
 		"OFFERS_LIMIT" => "5",
-		"PRICE_CODE" => array(),
+		"PRICE_CODE" => array(
+				0 => "PRICE",
+		),
 		"USE_PRICE_COUNT" => "N",
 		"SHOW_PRICE_COUNT" => "1",
 		"PRICE_VAT_INCLUDE" => "Y",

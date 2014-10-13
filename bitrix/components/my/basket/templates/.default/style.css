@@ -5,5 +5,25 @@
 }
 .basket_table{
     border-collapse: collapse;
+    width: 96%;
 }
-
+.basket{
+    /*width: 700px;*/
+}
+.basket input[type=text]{
+        width: 350px;
+        padding: 10px;
+}
+.basket input[type=submit]{
+        padding: 5px;
+}
+.basket textarea{
+    width: 500px;
+    height: 300px;
+}
+.inp_basket{
+    width: 50px!important;
+}
+.right_basket{
+    margin-right: 37px;
+}

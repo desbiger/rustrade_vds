@@ -7,6 +7,7 @@
 
 		static function factory()
 		{
+
 			return new Basket();
 		}
 
@@ -36,7 +37,8 @@
 					echo $el->LAST_ERROR;
 				};
 
-			}else{
+			}
+			else {
 				$el         = new CIBlockElement();
 				$tovar_name = $this->GetTovarNameByID($tovar_id);
 
@@ -69,6 +71,14 @@
 			$db     = CIBlockElement::GetList(null, array('PROPERTY_SESSION' => $this->ses_id));
 			$result = $this->Fetch($db);
 			return $result;
+		}
+
+		function GetTovarPrice($tovar_id)
+		{
+			CModule::IncludeModule('iblock');
+			$tovar = CIBlockElement::GetByID($tovar_id)->GetNextElement();
+			$price = $tovar->GetProperties();
+			return $price['PRICE']['VALUE'];
 		}
 
 	}

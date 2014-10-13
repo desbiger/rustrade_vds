@@ -2,5 +2,5 @@
 import/tovars/
 import/items/
 *.xml
-*.gif
+#*.gif
 *.gz

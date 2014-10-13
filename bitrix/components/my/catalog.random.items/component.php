@@ -13,7 +13,7 @@
 	  LEFT JOIN `b_iblock_element_property` AS prop
 	    ON (
 	      el.`ID` = prop.`IBLOCK_ELEMENT_ID`
-	      AND prop.`IBLOCK_PROPERTY_ID` = 26
+	      AND prop.`IBLOCK_PROPERTY_ID` = 2
 	    )
 	WHERE el.`IBLOCK_ID` = {$iblock_id}
 	ORDER BY RAND()

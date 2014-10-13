@@ -1,8 +1,8 @@
 .filter{
-    background-color: #ddf3ff;
-    width: 180px;
+    background-color: #ffffff;
+    width: 217px;
     padding: 10px;
-    float: right;
+    /*float: right;*/
 }
 .filter .node{
     float: left;
@@ -13,6 +13,8 @@
     clear: both;
     text-align: left;
     margin-bottom: 10px;
+    padding: 10px;
+    overflow: hidden;
 }
 .filter h3{
     margin-bottom: 5px;
