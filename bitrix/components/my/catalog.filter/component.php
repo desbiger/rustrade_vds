@@ -10,7 +10,7 @@
 	if ($_REQUEST['FILTER_ACTION']) {
 		//
 		?>
-		<!--			<pre>--><?//print_r($_REQUEST)?><!--</pre>-->
+		<!--			<pre><? //print_r($_REQUEST)?><!--</pre>
 		<? //
 		$sql = array();
 		foreach ($types as $key => $vol) {
@@ -86,7 +86,8 @@
 			while ($item = $res->Fetch()) {
 				$ids[] = $item['ID'];
 			}
-			$GLOBALS['arrFilter'] = count($ids) > 0 ? array('ID' => $ids) : array('ID' => 0);
+			 $GLOBALS['arrFilter'] = count($ids) > 0 ? array('ID' => $ids) : array('ID' => 0);
+//			print_r($GLOBALS['arrFilter']);
 		}
 	}
 
@@ -95,10 +96,10 @@
 
 	//	---------------------получаем уникальные значения множественного общего свойства-------------------------
 
-	foreach($types as $type_key => $type_vol){
-		$descriptions[] = "'".$type_key."'";
+	foreach ($types as $type_key => $type_vol) {
+		$descriptions[] = "'" . $type_key . "'";
 	}
-	$types_list =  implode(",",$descriptions);
+	$types_list = implode(",", $descriptions);
 
 	$section_id = $_REQUEST['SECTION_ID'];
 	$q          = "
@@ -127,32 +128,32 @@ GROUP BY prop.`DESCRIPTION`
 
 	//	---------------------получаем значения свойств добавленных в конфиг общего свойства-------------------------
 
-//	foreach ($types as $kkey => $ttype) {
-//		if ($ttype['REAL_CODE'] == 'Y') {
-//			$property_id = $ttype['PROERTY_ID'];
-//			$section_id  = $_REQUEST['SECTION_ID'];
-//			$q           = "
-//	SELECT
-//	  *
-//	FROM
-//	  `b_iblock_element_property` AS prop
-//	WHERE prop.`IBLOCK_ELEMENT_ID` IN
-//	  (SELECT
-//	    el.`ID`
-//	  FROM
-//	    `b_iblock_element` AS el
-//	  WHERE el.`IBLOCK_SECTION_ID` = {$section_id})
-//	    AND prop.`IBLOCK_PROPERTY_ID` = {$property_id}
-//		";
-//
-//			$t = $DB->Query($q);
-//			if ($temp = $t->Fetch()) {
-//				$value[$kkey]                             = filter::GetValues($kkey);
-//				$arResult['ITEMS'][]                      = $temp;
-//				$arResult['VALUES'][$kkey] = $value[$kkey];
-//			}
-//		}
-//	}
+	//	foreach ($types as $kkey => $ttype) {
+	//		if ($ttype['REAL_CODE'] == 'Y') {
+	//			$property_id = $ttype['PROERTY_ID'];
+	//			$section_id  = $_REQUEST['SECTION_ID'];
+	//			$q           = "
+	//	SELECT
+	//	  *
+	//	FROM
+	//	  `b_iblock_element_property` AS prop
+	//	WHERE prop.`IBLOCK_ELEMENT_ID` IN
+	//	  (SELECT
+	//	    el.`ID`
+	//	  FROM
+	//	    `b_iblock_element` AS el
+	//	  WHERE el.`IBLOCK_SECTION_ID` = {$section_id})
+	//	    AND prop.`IBLOCK_PROPERTY_ID` = {$property_id}
+	//		";
+	//
+	//			$t = $DB->Query($q);
+	//			if ($temp = $t->Fetch()) {
+	//				$value[$kkey]                             = filter::GetValues($kkey);
+	//				$arResult['ITEMS'][]                      = $temp;
+	//				$arResult['VALUES'][$kkey] = $value[$kkey];
+	//			}
+	//		}
+	//	}
 
 
 	$i = 0;
@@ -165,6 +166,5 @@ GROUP BY prop.`DESCRIPTION`
 
 
 	$this->IncludeComponentTemplate();
-
 
 ?>
