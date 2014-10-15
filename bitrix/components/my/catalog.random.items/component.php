@@ -17,7 +17,7 @@
 	    )
 	WHERE el.`IBLOCK_ID` = {$iblock_id}
 	ORDER BY RAND()
-	LIMIT 16
+	LIMIT 8
 	";
 
 	$t = $DB->Query($q);
