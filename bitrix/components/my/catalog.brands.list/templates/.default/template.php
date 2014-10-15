@@ -50,20 +50,20 @@
 </style>
 <script type = "text/javascript">
 	$(function () {
-		var brands_height = $('.breands_list').height();
-
 		$('.breands_list').css('height', 300);
-
 		$('a.show').click(function () {
-			if ($('.breands_list').height() < brands_height) {
-				$('.breands_list').animate({'height': brands_height},200);
-				$(this).html('Скрыть')
-			} else {
-				$('.breands_list').animate({'height': 300},200);
-				$(this).html('Показать все')
-			}
+			alert(123);
+			$('.breands_list').toggle(
+					function () {
+						$(this).css('height', '1000');
+					},
+					function () {
+						$(this).css('height', '300');
+					}
+			);
 			return false;
 		});
+
 	});
 </script>
 <div class = "breands_list">
@@ -83,5 +83,4 @@
 		<? endforeach ?>
 	</div>
 </div>
-<br/>
-<a href = "#" class = "show">Показать все</a>
+<a href = "#" class = "show">Показать</a>
