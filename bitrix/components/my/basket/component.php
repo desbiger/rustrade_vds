@@ -83,9 +83,16 @@
 
 	if (isset($_POST['finish'])) {
 
-		$email          = $_POST['email'];
-		$name           = $_POST['name'];
-		$phone          = $_POST['phone'];
+		$email      = $_POST['email'];
+		$name       = $_POST['byer'];
+		$phone      = $_POST['byer_phone'];
+		$pred_name  = $_POST['bbyer'];
+		$pred_phone = $_POST['bbyer_phone'];
+
+		$adress = $_POST['adress'];
+		$by     = $_POST['pay_system'];
+		$lift   = $_POST['lift'];
+
 		$text           = $_POST['text'];
 		$html           = "
 
@@ -138,7 +145,8 @@
 
 						</tr>";
 		}
-		$t = CIBlockElement::GetList(null,array('NAME' => 'Новый'))->Fetch();
+		$t                  = CIBlockElement::GetList(null, array('NAME' => 'Новый'))
+				->Fetch();
 		$property['STATUS'] = $t['ID'];
 
 		$element = new CIblockElement();
