@@ -27,3 +27,10 @@
 .right_basket{
     margin-right: 37px;
 }
+
+.order_table tr td:first-child{
+    text-align: right;
+}
+.order_table tr td{
+    padding: 4px;
+}
