@@ -29,5 +29,17 @@
 				return false;
 			}
 		}
+
+		function GetName()
+		{
+			global $DB;
+			$q     = "SELECT *
+					FROM
+					b_iblock_element
+					WHERE ID = {$this->tovar_id}";
+			$tovar = $DB->Query($q)
+					->Fetch();
+			return $tovar['NAME'];
+		}
 	}
  

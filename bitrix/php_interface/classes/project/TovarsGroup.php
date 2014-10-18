@@ -34,11 +34,18 @@
 				foreach ($this->tovarsList as $vol) {
 					$tovar_id          = preg_replace("|([0-9]+)\(([0-9]+)\)|isU", "$1", $vol['VALUE']);
 					$tovar_quantity    = preg_replace("|([0-9]+)\(([0-9]+)\)|isU", "$2", $vol['VALUE']);
-					$result[$tovar_id] = $tovar_quantity;
+					$result[$tovar_id] = array(
+							'QUANTITY' => $tovar_quantity,
+							'PRICE' => Tovar::factory($tovar_id)
+									->GetPrice(),
+							'NAME' => Tovar::factory($tovar_id)
+									->GetName()
+					);
 				}
 			}
 			return $result;
 		}
+
 
 	}
  
