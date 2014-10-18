@@ -3,4 +3,4 @@
 } ?>
 
 <!--<pre>--><?//print_r($arResult)?><!--</pre>-->
-<!--<pre>--><?//print_r(TovarsGroup::factory(44158)->tovarsList)?><!--</pre>-->
+<pre><?print_r(TovarsGroup::factory(44158)->GetTovarsAndQuantity())?></pre>
