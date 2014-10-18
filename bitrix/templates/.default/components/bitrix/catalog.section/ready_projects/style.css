@@ -1,0 +1,25 @@
+.sections_link {
+    width: 100%;
+    overflow: hidden;
+}
+
+.sections_link a {
+    color: #575656;
+    font: bold 14px Arial, Helvetica, sans-serif;
+    list-style: square outside none;
+    text-align: left;
+    text-decoration: none;
+    padding-left: 5px;
+}
+
+.nolist {
+    list-style: none !important;
+}
+
+.section_div {
+    float: left;
+    height: 240px;
+    margin-left: 20px;
+    text-align: left;
+    width: 230px;
+}
