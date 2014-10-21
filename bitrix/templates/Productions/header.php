@@ -108,7 +108,6 @@
 
 <body>
 <? $APPLICATION->ShowPanel() ?>
-
 <div id = "wrapper">
 
 	<div id = "header">
