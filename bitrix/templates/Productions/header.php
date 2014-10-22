@@ -38,10 +38,10 @@
 		$(document).ready(function () {
 			$(".fancy").fancybox();
 
-			var right_height = $('.right').height();
-			var content_height = $('#content').height();
-			if (content_height < right_height) {
-				$('#content').css('height', right_height);
+//			var right_height = $('.right').height();
+//			var content_height = $('#content').height();
+//			if (content_height < right_height) {
+//				$('#content').css('height', right_height);
 			}
 
 
