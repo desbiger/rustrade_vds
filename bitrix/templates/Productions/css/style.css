@@ -41,9 +41,7 @@ input {
     width: 1200px;
     margin: auto;
     min-width: 1000px;
-    min-height: 100%;
-    /*height: auto !important;*/
-    height: 100%;
+    position: relative;
 }
 
 /* Header
@@ -315,10 +313,8 @@ input {
 -----------------------------------------------------------------------------*/
 #middle {
     width: 100%;
-    padding: 0 0 190px;
-    height: 1%;
+    /*padding: 0 0 190px;*/
     position: relative;
-
     margin-bottom: 35px;
 }
 
@@ -331,13 +327,13 @@ input {
 }
 
 #container {
-    width: 100%;
+    width: 950px;
     float: left;
 }
 
 #content {
     padding: 0 0 0 260px;
-    min-height: 500px;
+    /*min-height: 500px;*/
     position: relative;
     text-align: left;
 }
@@ -449,8 +445,8 @@ input {
 #sideLeft {
     float: left;
     width: 237px;
-    margin-left: -100%;
     position: relative;
+    top:-727px;
 
 }
 
@@ -564,11 +560,11 @@ input {
 /* Footer
 -----------------------------------------------------------------------------*/
 #footer {
-    margin: -190px auto 0;
+    /*margin: -190px auto 0;*/
     min-width: 1000px;
     height: 190px;
     background: #f4f3f3;
-    position: relative;
+    /*position: relative;*/
 }
 
 .foot_line {
@@ -748,10 +744,17 @@ input[type=button], .blue_button {
 }
 
 .right{
+    /*width: 250px;*/
+    /*display: inline-block;*/
+    /*position: absolute;*/
+    /*float: right;*/
+    /*right: -10px;*/
+    /*top: -120px;*/
+
     width: 250px;
     display: inline-block;
-    position: absolute;
-    float: right;
-    right: -10px;
-    top: -120px;
+    position: relative;
+    /*float: right;*/
+    left: 724px;
+    top: -855px;
 }

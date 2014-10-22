@@ -50,17 +50,14 @@
 </style>
 <script type = "text/javascript">
 	$(function () {
-		$('.breands_list').css('height', 300);
+		var height = $('.breands_list').height();
+		$('.breands_list').css('height', 525);
 		$('a.show').click(function () {
-			alert(123);
-			$('.breands_list').toggle(
-					function () {
-						$(this).css('height', '1000');
-					},
-					function () {
-						$(this).css('height', '300');
-					}
-			);
+			if ($('.breands_list').height() == 525) {
+				$('.breands_list').animate({height: height}, 300);
+			} else {
+				$('.breands_list').animate({height: '525px'}, 300);
+			}
 			return false;
 		});
 
