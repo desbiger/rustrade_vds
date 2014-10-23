@@ -35,6 +35,11 @@
 	</div>
 </div>
 <? if ($_SERVER['REAL_FILE_PATH'] != '/catalog/detail_page.php' && $_SERVER['SCRIPT_NAME'] != '/catalog/index.php' && (preg_match("|catalog|", $_SERVER['REQUEST_URI']) || $_SERVER['REQUEST_URI'] == '/')): ?>
+	<style type = "text/css">
+		#container {
+			width: 950px!important;
+		}
+	</style>
 	<div class = "right">
 		<h3>Список производителей</h3>
 
@@ -125,26 +130,33 @@
 //			), false);?>
 
 	<?$APPLICATION->IncludeComponent(
-		"bitrix:catalog.section.list",
-		".default",
-		Array(
-			"IBLOCK_TYPE" => "products",
-			"IBLOCK_ID" => "12",
-			"SECTION_ID" => $_REQUEST["SECTION_ID"],
-			"SECTION_CODE" => "",
-			"COUNT_ELEMENTS" => "Y",
-			"TOP_DEPTH" => "1",
-			"SECTION_FIELDS" => array(0=>"",1=>"",),
-			"SECTION_USER_FIELDS" => array(0=>"",1=>"",),
-			"SECTION_URL" => "",
-			"CACHE_TYPE" => "N",
-			"CACHE_TIME" => "36000000",
-			"CACHE_GROUPS" => "Y",
-			"ADD_SECTIONS_CHAIN" => "Y",
-			"VIEW_MODE" => "LINE",
-			"SHOW_PARENT_NAME" => "Y"
-		)
-	);?>
+	"bitrix:catalog.section.list", 
+	"ready_projects_sections", 
+	array(
+		"IBLOCK_TYPE" => "products",
+		"IBLOCK_ID" => "12",
+		"SECTION_ID" => $_REQUEST["SECTION_ID"],
+		"SECTION_CODE" => "",
+		"COUNT_ELEMENTS" => "Y",
+		"TOP_DEPTH" => "1",
+		"SECTION_FIELDS" => array(
+			0 => "",
+			1 => "",
+		),
+		"SECTION_USER_FIELDS" => array(
+			0 => "",
+			1 => "",
+		),
+		"SECTION_URL" => "",
+		"CACHE_TYPE" => "N",
+		"CACHE_TIME" => "36000000",
+		"CACHE_GROUPS" => "Y",
+		"ADD_SECTIONS_CHAIN" => "Y",
+		"VIEW_MODE" => "LINE",
+		"SHOW_PARENT_NAME" => "Y"
+	),
+	false
+);?>
 
 </div>
 
