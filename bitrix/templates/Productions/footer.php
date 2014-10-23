@@ -4,13 +4,6 @@
 </div>
 <!-- #container-->
 
-
-<!--<pre>--><? // print_r($_SERVER) ?><!--</pre>-->
-
-<!-- .sidebar#sideLeft -->
-
-</div>
-<!-- #middle-->
 <div class = "sidebar" id = "sideLeft">
 
 	<div class = "left">
