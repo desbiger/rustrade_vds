@@ -1,0 +1,27 @@
+.ready_projects{
+    width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    background-image: url("/bitrix/templates/Productions/img/restoran.jpg");
+    background-size: cover;
+    background-position-y: 454px;
+}
+.project_node{
+    margin: 30px;
+    float: left;
+    display: block;
+    background-color: #0066CC;
+    width: 200px;
+    padding: 20px;
+    color: #ffffff;
+}
+.project_node h3{
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: #ffffff;
+}
+.project_node .project_price{
+    margin: 10px;
+    display: block;
+    font-size: 18px;
+}

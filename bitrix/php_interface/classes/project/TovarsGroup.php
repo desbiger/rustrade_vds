@@ -27,10 +27,11 @@
 			}
 		}
 
-		function GetTovarsAndQuantity()
+		function GetTovarsAndQuantity($as_object = false)
 		{
 			$result = array();
 			if (count($this->tovarsList)) {
+				$summa = 0;
 				foreach ($this->tovarsList as $vol) {
 					$tovar_id          = preg_replace("|([0-9]+)\(([0-9]+)\)|isU", "$1", $vol['VALUE']);
 					$tovar_quantity    = preg_replace("|([0-9]+)\(([0-9]+)\)|isU", "$2", $vol['VALUE']);
@@ -38,15 +39,18 @@
 							->GetPrice();
 					$tovar_name        = Tovar::factory($tovar_id)
 							->GetName();
-					$result[$tovar_id] = array(
+					$loc_summa         = str_replace(" ", '', $price) * $tovar_quantity;
+					$summa += $loc_summa;
+					$result['ITEMS'][$tovar_id] = array(
 							'QUANTITY' => $tovar_quantity,
 							'PRICE' => $price,
 							'NAME' => $tovar_name,
-							'SUMMA' => str_replace(" ",'',$price) * $tovar_quantity,
+							'SUMMA' => $loc_summa,
 					);
 				}
+				$result['SUMMA'] = $summa;
 			}
-			return $result;
+			return $as_object ? (object)$result : $result ;
 		}
 
 

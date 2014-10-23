@@ -445,8 +445,8 @@ input {
 #sideLeft {
     float: left;
     width: 237px;
-    position: relative;
-    top:-727px;
+    position: absolute;
+    /*top:-727px;*/
 
 }
 
@@ -755,6 +755,6 @@ input[type=button], .blue_button {
     display: inline-block;
     position: relative;
     /*float: right;*/
-    left: 724px;
-    top: -855px;
+    left: 4px;
+    top: -135px;
 }

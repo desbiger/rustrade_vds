@@ -55,8 +55,11 @@
 		$('a.show').click(function () {
 			if ($('.breands_list').height() == 525) {
 				$('.breands_list').animate({height: height}, 300);
+
+				$('.show').html('Скрыть');
 			} else {
 				$('.breands_list').animate({height: '525px'}, 300);
+				$('.show').html('Показать всех <br/> производителей');
 			}
 			return false;
 		});
@@ -80,4 +83,6 @@
 		<? endforeach ?>
 	</div>
 </div>
-<a href = "#" class = "show">Показать</a>
+<div style="padding: 10px; text-align: center">
+<a href = "#" class = "show">Показать всех <br/> производителей</a>
+</div>
