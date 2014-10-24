@@ -57,6 +57,7 @@
 	</div>
 <? endif ?>
 </div>
+</div>
 <!-- #wrapper -->
 <?if($_SERVER['SCRIPT_NAME'] == '/index.php'):?>
 <div class = "ready_projects">
