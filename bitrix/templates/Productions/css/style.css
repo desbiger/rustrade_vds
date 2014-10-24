@@ -333,7 +333,7 @@ input {
 
 #content {
     padding: 0 0 0 260px;
-    /*min-height: 500px;*/
+    min-height: 500px;
     position: relative;
     text-align: left;
 }
