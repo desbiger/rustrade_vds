@@ -1,0 +1,16 @@
+.project_node {
+
+}
+
+.project_node .img_logo {
+    float: left;
+    margin-right: 20px;
+}
+
+.project_node .props {
+    float: left;
+
+}
+.project_node .props ul{
+    list-style: none;
+}

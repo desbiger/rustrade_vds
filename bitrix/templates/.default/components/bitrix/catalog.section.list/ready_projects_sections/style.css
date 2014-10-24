@@ -5,6 +5,8 @@
     background-image: url("/bitrix/templates/Productions/img/restoran.jpg");
     background-size: cover;
     background-position-y: 454px;
+
+    margin-bottom: 50px;
 }
 .project_node{
     margin: 30px;

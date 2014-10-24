@@ -43,6 +43,6 @@
 		<span class = "project_price">
 		<?= preg_replace("|([0-9]{1,3})([0-9]{3})([0-9]{3})|isU", "$1 $2 $3", $summa) ?> р.
 		</span>
-		<a href = "" class = "blue_button" style = "position: inherit">Подробнее</a>
+		<a href = "/ready_projects/<?=$vol['ID']?>/" class = "blue_button" style = "position: inherit">Подробнее</a>
 	</div>
 <? endforeach ?>
