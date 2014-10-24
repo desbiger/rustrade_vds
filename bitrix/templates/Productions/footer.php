@@ -59,7 +59,7 @@
 </div>
 </div>
 <!-- #wrapper -->
-<?if($_SERVER['SCRIPT_NAME'] == '/index.php'):?>
+<?if($_SERVER['SCRIPT_NAME'] == '/index.php' && $USER->GetID() == 1):?>
 <div class = "ready_projects">
 
 
