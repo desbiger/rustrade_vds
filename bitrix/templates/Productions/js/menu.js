@@ -24,7 +24,7 @@ function jsddm_canceltimer() {
     }
 }
  
-$(document).ready(function() {
+jQuery(document).ready(function() {
     $('#jsddm > li').bind('mouseover', jsddm_open);
     $('#jsddm > li').bind('mouseout',  jsddm_timer);
 });

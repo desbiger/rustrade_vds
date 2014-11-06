@@ -54,5 +54,9 @@
 		}
 
 
+		static function FormatetdSumma($vol){
+			return preg_replace("|([0-9]{1,3})([0-9]{3})([0-9]{3})|isU", "$1 $2 $3", $vol);
+		}
+
 	}
  

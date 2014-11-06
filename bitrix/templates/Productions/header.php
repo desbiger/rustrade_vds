@@ -14,17 +14,17 @@
 	<link rel = "stylesheet" type = "text/css" href = "/bitrix/templates/Productions/css/style_ie.css"/>
 	<![endif]-->
 
-	<script type = "text/javascript" src = "/bitrix/templates/Productions/js/menu.js"></script>
+<!--	<script type = "text/javascript" src = "/bitrix/templates/Productions/js/menu.js"></script>-->
 	<script type = "text/javascript" src = "/bitrix/templates/Productions/js/jquery-1.4.3.min.js"></script>
 	<script type = "text/javascript" src = "/include/jquery.ui-slider.js"></script>
 
 	<script type = "text/javascript" src = "/bitrix/templates/Productions/js/js.js"></script>
+	<script type = "text/javascript" src = "/bitrix/templates/Productions/js/tabs.js"></script>
 	<script type = "text/javascript" src = "/bitrix/templates/Productions/js/jquery.jcarousel.min.js"></script>
 	<script type = "text/javascript" src = "/bitrix/templates/Productions/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 
 	<link rel = "stylesheet" href = "/bitrix/templates/Productions/css/cssf-base.css" type = "text/css" media = "screen"/>
 	<link rel = "stylesheet" href = "/bitrix/templates/Productions/css/main.css" type = "text/css" media = "screen"/>
-	<link rel = "stylesheet" href = "/bitrix/templates/Productions/caruosel/skin.css" type = "text/css" media = "screen"/>
 	<link rel = "stylesheet" href = "/bitrix/templates/Productions/fancybox/jquery.fancybox-1.3.4.css" type = "text/css"
 	      media = "screen"/>
 	<!--[if lte IE 6]>
@@ -43,9 +43,7 @@
 //			if (content_height < right_height) {
 //				$('#content').css('height', right_height);
 			}
-
-
-		})
+		)
 
 	</script>
 	<!-- Yandex.Metrika counter -->

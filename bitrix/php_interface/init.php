@@ -1,6 +1,7 @@
 <?
 
 	require_once($_SERVER['DOCUMENT_ROOT']."/bitrix/php_interface/TovarGroups.php");
+	require_once($_SERVER['DOCUMENT_ROOT']."/bitrix/php_interface/View.php");
 	require_once($_SERVER['DOCUMENT_ROOT']."/bitrix/php_interface/classes/project/Tovar.php");
 	require_once($_SERVER['DOCUMENT_ROOT']."/bitrix/php_interface/classes/project/TovarsGroup.php");
 	AddEventHandler('iblock', 'OnIBlockPropertyBuildList', array('TovarGroups', 'GetUserTypeDescription'));
