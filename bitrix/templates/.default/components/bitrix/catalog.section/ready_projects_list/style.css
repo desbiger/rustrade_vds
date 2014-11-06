@@ -1,5 +1,8 @@
 .project_node {
-
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 100%;
+    position: relative;
 }
 
 .project_node .img_logo {
@@ -11,6 +14,60 @@
     float: left;
 
 }
+.project_node .props .price {
+    color: red;
+    font-size: 25px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
 .project_node .props ul{
     list-style: none;
+}
+
+.tabs{
+    clear: both;
+
+}
+.tabs ul {
+    padding: 9px;
+}
+
+.tabs ul li{
+    display: inline-block;
+    list-style: none;
+
+}
+.tabs ul li a{
+    padding: 10px;
+    color: #000000;
+    text-decoration: none;
+}
+.tabs ul li a.selected{
+    font-weight: bold;
+    border: 1px solid #808080;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.tabNavigation{
+    border-bottom: 1px solid #808080;
+}
+.tabs div{
+    padding: 10px;
+}
+.tabs div a img{
+    border: 1px solid #808080!important;
+    padding: 10px;
+}
+.tabs div table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.tabs div table thead tr td{
+    font-weight: bold;
+    border-bottom: 1px solid #b6b6b6;
+}
+.tabs div table tr td{
+    padding: 10px;
+    border-bottom: 1px solid #b6b6b6;
 }
