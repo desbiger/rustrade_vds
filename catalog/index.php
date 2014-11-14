@@ -9,13 +9,13 @@
 ));?>
 	<hr/>
 
-<? if ($_REQUEST['SECTION_ID'] || $_REQUEST['BREND']): ?>
+<? if ($_REQUEST['SECTION_ID'] || $_REQUEST['SECTION_CODE'] || $_REQUEST['BREND']): ?>
 	<?
 	$template = '.default';
 	?>
 <? endif ?>
 
-<? if (!$_REQUEST['SECTION_ID'] && !$_REQUEST['BREND']) {
+<? if (!$_REQUEST['SECTION_ID'] && !$_REQUEST['SECTION_CODE'] && !$_REQUEST['BREND']) {
 	$template = 'list_categories';
 }
 ?>
@@ -27,7 +27,7 @@
 		"IBLOCK_TYPE" => "products",
 		"IBLOCK_ID" => "2",
 		"SECTION_ID" => $_REQUEST["SECTION_ID"],
-		"SECTION_CODE" => "",
+		"SECTION_CODE" => $_REQUEST["SECTION_CODE"],
 		"SECTION_USER_FIELDS" => array(
 				0 => "UF_PRICE",
 				1 => "",

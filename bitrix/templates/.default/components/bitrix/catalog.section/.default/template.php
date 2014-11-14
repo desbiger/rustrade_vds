@@ -4,6 +4,12 @@
 
 
 <?
+	$dd = CIBlockSection::GetList(null, array('CODE' => $_REQUEST['SECTION_CODE']))
+			->Fetch();
+
+	$_REQUEST['SECTION_ID'] = $dd['ID'] ? $dd['ID'] : $_REQUEST['SECTION_ID'];
+
+
 	$section = CIBlockSection::GetList(null, array(
 			'ID' => $_REQUEST['SECTION_ID'],
 			'IBLOCK_ID' => 2
@@ -77,17 +83,17 @@
 	), false);?>
 <? else: ?>
 	<!--	<pre>--><? //print_r($section)?><!--</pre>-->
-	<div class = "_catalog">
-		<div class = "cat_tit">
-			<a href = "#">Каталог товаров<?= $_REQUEST['BREND'] ? " (" . $_REQUEST['BREND'] . ")" : '' ?></a> <img src =
-			                                                                                                       "/bitrix/templates/Productions/img/marker2.png"
-			                                                                                                       alt
-			                                                                                                       =
-			                                                                                                       "m2">
+	<div class="_catalog">
+		<div class="cat_tit">
+			<a href="#">Каталог товаров<?= $_REQUEST['BREND'] ? " (" . $_REQUEST['BREND'] . ")" : '' ?></a> <img src=
+			                                                                                                     "/bitrix/templates/Productions/img/marker2.png"
+			                                                                                                     alt
+			                                                                                                     =
+			                                                                                                     "m2">
 		</div>
 
 		<? if (count($subsections) == 0 || $_REQUEST['BREND']): ?>
-			<div class = "cat_tov" >
+			<div class="cat_tov">
 				<? foreach ($arResult['ITEMS'] as $item): ?>
 					<?
 					$this->AddEditAction($item['ID'], $item['EDIT_LINK'], CIBlock::GetArrayByID($item["IBLOCK_ID"], "ELEMENT_EDIT"));
@@ -98,16 +104,16 @@
 							'height' => 150
 					)); ?>
 
-					<div class = "tovar" id = "<?= $this->GetEditAreaId($item['ID']); ?>">
-						<a href = "<?= $item['DETAIL_PAGE_URL'] ?>" style="height: 150px">
-							<img src = "<?= $file['src'] ?>" alt = "1">
+					<div class="tovar" id="<?= $this->GetEditAreaId($item['ID']); ?>">
+						<a href="<?= $item['DETAIL_PAGE_URL'] ?>" style="height: 150px">
+							<img src="<?= $file['src'] ?>" alt="1">
 						</a>
 						<?= $item['NAME'] ?><br>
 						<br>
-					<span class = "rr">
+					<span class="rr">
 							<?= $section['UF_PRICE'] == '1' ? $item['PROPERTIES']['PRICE']['VALUE'] . " р.-" : '' ?>
 					</span>
-						<input type = "button" value = "В корзину" tovar = "<?= $item['ID'] ?>"/>
+						<input type="button" value="В корзину" tovar="<?= $item['ID'] ?>"/>
 					</div>
 
 				<? endforeach ?>
@@ -117,17 +123,17 @@
 
 			<p><?= $arResult["NAV_STRING"] ?></p>
 		<? else: ?>
-			<div class = "cat_tov">
+			<div class="cat_tov">
 				<? foreach ($subsections as $sub): ?>
 					<? $pic = CFile::ResizeImageGet(GetPictureOfSection($sub['ID']), array(
 							'width' => 150,
 							'height' => 150
 					)) ?>
-					<div class = "tovar" style = "position: relative">
-						<a href = "<?= $sub['SECTION_PAGE_URL'] ?>">
-							<img src = "<?= $pic['src'] ?>">
+					<div class="tovar" style="position: relative">
+						<a href="<?= $sub['SECTION_PAGE_URL'] ?>">
+							<img src="<?= $pic['src'] ?>">
 							<br>
-							<span style = "position: absolute; bottom: 0"><?= $sub['NAME'] ?></span>
+							<span style="position: absolute; bottom: 0"><?= $sub['NAME'] ?></span>
 						</a>
 
 					</div>
