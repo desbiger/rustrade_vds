@@ -20,7 +20,7 @@ $arUrlRewrite = array(
 	),
 	array(
 		"CONDITION" => "#^/ready_projects/(.*)/.*#",
-		"RULE" => "SECTION_CODE=\$1",
+		"RULE" => "SECTION_ID=\$1",
 		"ID" => "",
 		"PATH" => "/ready_projects/index.php",
 	),
