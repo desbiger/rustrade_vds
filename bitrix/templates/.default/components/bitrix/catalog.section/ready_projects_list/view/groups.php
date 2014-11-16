@@ -8,13 +8,15 @@
 	</tr>
 	</thead>
 	<tbody>
+	<?$i = 0?>
 	<? foreach ($tovars->ITEMS as $tovar): ?>
 		<tr>
-			<td></td>
+			<td><?=++$i?></td>
 			<td><?= $tovar['NAME'] ?></td>
 			<td><?= $tovar['QUANTITY'] ?> шт.</td>
 		</tr>
 	<? endforeach ?>
 	</tbody>
 </table>
+
  
