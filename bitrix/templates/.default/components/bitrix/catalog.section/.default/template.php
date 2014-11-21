@@ -111,7 +111,8 @@
 						<?= $item['NAME'] ?><br>
 						<br>
 					<span class="rr">
-							<?= $section['UF_PRICE'] == '1' ? $item['PROPERTIES']['PRICE']['VALUE'] . " р.-" : '' ?>
+						<?$znak = $item['PROPERTIES']['PRICECURRENCY']['VALUE'] ? $item['PROPERTIES']['PRICECURRENCY']['VALUE'] : 'р' ?>
+							<?= $section['UF_PRICE'] == '1' ? $item['PROPERTIES']['PRICE']['VALUE'] . " $znak.-" : '' ?>
 					</span>
 						<input type="button" value="В корзину" tovar="<?= $item['ID'] ?>"/>
 					</div>

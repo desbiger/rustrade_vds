@@ -22,8 +22,14 @@
 
 	$t = $DB->Query($q);
 	while ($temp = $t->Fetch()) {
+		$props = array();
 		$tovar = CIblockElement::GetByID($temp['ID'])->GetNext();
 		$temp['DETAIL_PAGE_URL'] = $tovar['DETAIL_PAGE_URL'];
+		$p_res = CIBlockElement::GetProperty($temp['IBLOCK_ID'],$temp['ID']);
+		while($prop = $p_res->GetNext()){
+			$props[$prop['CODE']] = $prop;
+		}
+		$temp['PROPS'] = $props;
 		$arResult['ITEMS'][] = $temp;
 	}
 

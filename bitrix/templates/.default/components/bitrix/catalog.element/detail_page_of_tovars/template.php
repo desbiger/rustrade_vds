@@ -30,7 +30,8 @@
 
 		<? if ($arResult['PROPERTIES']['SHOW_PRICE']['VALUE'] == 'да' or $section['UF_PRICE'] == '1'): ?>
 			<div class = "catalog-price">
-				<?= $arResult['PROPERTIES']['PRICE']['VALUE'] ?> р.
+				<?$znak = $arResult['PROPERTIES']['PRICECURRENCY']['VALUE'] ? $arResult['PROPERTIES']['PRICECURRENCY']['VALUE'] : 'р' ?>
+				<?= $arResult['PROPERTIES']['PRICE']['VALUE'] ?> <?=$znak?>.
 			</div>
 		<? endif ?>
 
