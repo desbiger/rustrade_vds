@@ -47,7 +47,7 @@ input {
 /* Header
 -----------------------------------------------------------------------------*/
 #header {
-    height: 137px;
+    height: 114px;
 }
 
 .topmenu {
@@ -230,10 +230,10 @@ input {
 }
 
 .slider {
-    width: auto;
+    width: 950px;
     height: 290px;
     padding: 0;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
     margin-top: 32px;
 }
 
@@ -241,6 +241,7 @@ input {
 
     left: 50%;
     top: 50%;
+    overflow: hidden;
     /*margin: -100px 0 0 -402px;*/
 }
 
@@ -259,6 +260,7 @@ input {
     margin-left: 36px;
     margin-top: -25px;
     margin-right: 36px;
+    width: 900px;
 }
 
 .image_reel {
@@ -275,13 +277,13 @@ input {
 .paging {
     position: absolute;
     bottom: -8px;
-    right: 251px;
+    right: 0;
     width: 178px;
     height: 47px;
     z-index: 100;
     text-align: center;
     line-height: 40px;
-    background: url(paging_bg2.png) no-repeat;
+    background: url('paging_bg2.png') no-repeat;
     display: none;
 }
 

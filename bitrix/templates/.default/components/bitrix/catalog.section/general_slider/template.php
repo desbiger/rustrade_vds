@@ -10,17 +10,18 @@
 		<div class = "main_view">
 
 			<div class = "window">
-				<div class = "image_reel" style="top: -239px;">
+				<div class = "image_reel" style = "top: -239px;">
 					<? foreach ($arResult['ITEMS'] as $vol): ?>
-						<a href = "#"><img style="width:1128px; bottom: 0" src = "<?= $vol['DETAIL_PICTURE']['SRC'] ?>" alt = ""/></a>
+						<a href = "#"><img style = "width:950px; bottom: 0" src = "<?= $vol['DETAIL_PICTURE']['SRC'] ?>" alt = ""/></a>
 					<? endforeach ?>
 				</div>
 			</div>
 			<div class = "paging">
 				<? foreach ($arResult['ITEMS'] as $k => $vol): ?>
-				<a href = "#" rel = "<?=$k+1?>">&nbsp;</a>
+					<a href = "#" rel = "<?= $k + 1 ?>">&nbsp;</a>
 				<? endforeach ?>
 			</div>
+
 		</div>
 	</div>
 
