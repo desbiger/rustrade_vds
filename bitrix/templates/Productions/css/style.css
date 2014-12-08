@@ -47,7 +47,7 @@ input {
 /* Header
 -----------------------------------------------------------------------------*/
 #header {
-    height: 137px;
+    height: 114px;
 }
 
 .topmenu {
@@ -165,10 +165,18 @@ input {
 .post_header {
     text-align: center;
     line-height: 23px;
+    width: 1200px;
+    height: 290px;
+    padding-top: 32px;
 }
 
-.slider {
-
+.slider_vertikal {
+    width: 270px;
+    height: 261px;
+    padding: 0;
+    float: right;
+    text-align: left;
+    overflow: hidden;
 }
 
 .jsm {
@@ -230,17 +238,19 @@ input {
 }
 
 .slider {
-    width: auto;
+    width: 900px;
     height: 290px;
     padding: 0;
-    margin: 0 auto;
-    margin-top: 32px;
+    /*margin: 0 auto;*/
+    /*margin-top: 32px;*/
+    float: left;
 }
 
 .folio_block {
 
     left: 50%;
     top: 50%;
+    overflow: hidden;
     /*margin: -100px 0 0 -402px;*/
 }
 
@@ -259,6 +269,7 @@ input {
     margin-left: 36px;
     margin-top: -25px;
     margin-right: 36px;
+    width: 900px;
 }
 
 .image_reel {
@@ -275,13 +286,13 @@ input {
 .paging {
     position: absolute;
     bottom: -8px;
-    right: 251px;
+    right: 0;
     width: 178px;
     height: 47px;
     z-index: 100;
     text-align: center;
     line-height: 40px;
-    background: url(paging_bg2.png) no-repeat;
+    background: url('paging_bg2.png') no-repeat;
     display: none;
 }
 
@@ -447,11 +458,13 @@ input {
     width: 237px;
     position: absolute;
     /*top:-727px;*/
+    z-index: 1000;
 
 }
 
 .left {
     /*margin-left:66px;*/
+    z-index: 1000;
 }
 
 .left_index {
@@ -756,5 +769,6 @@ input[type=button], .blue_button {
     position: relative;
     /*float: right;*/
     left: 4px;
-    top: -135px;
+    top: -128px;
+    z-index: 1000;
 }

@@ -4,25 +4,27 @@
 
 
 <!--<pre>--><? //print_r($arResult)?><!--</pre>-->
-<div class = "slider">
-	<div class = "folio_block">
+<div class="slider">
+	<div class="folio_block">
 
-		<div class = "main_view">
+		<div class="main_view">
 
-			<div class = "window">
-				<div class = "image_reel" style="top: -239px;">
+			<div class="window">
+				<ul class="image_reel" style="top: -239px;">
 					<? foreach ($arResult['ITEMS'] as $vol): ?>
-						<a href = "#"><img style="width:1128px; bottom: 0" src = "<?= $vol['DETAIL_PICTURE']['SRC'] ?>" alt = ""/></a>
+						<li>
+							<a href="#"><img style="width:900px; bottom: 0" src="<?= $vol['DETAIL_PICTURE']['SRC'] ?>" alt=""/></a>
+						</li>
 					<? endforeach ?>
-				</div>
+				</ul>
 			</div>
-			<div class = "paging">
+			<div class="paging">
 				<? foreach ($arResult['ITEMS'] as $k => $vol): ?>
-				<a href = "#" rel = "<?=$k+1?>">&nbsp;</a>
+					<a href="#" rel="<?= $k + 1 ?>">&nbsp;</a>
 				<? endforeach ?>
 			</div>
+
 		</div>
 	</div>
-
 
 </div>
