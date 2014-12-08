@@ -65,7 +65,7 @@ input {
 }
 
 .topmenu ul li a {
-    font: 11px Arial, Helvetica, sans-serif;
+    font: 12px Arial, Helvetica, sans-serif;
     color: #bdbcbc;
     text-decoration: none;
     font-weight: bold;
@@ -165,18 +165,10 @@ input {
 .post_header {
     text-align: center;
     line-height: 23px;
-    width: 1200px;
-    height: 290px;
-    padding-top: 32px;
 }
 
-.slider_vertikal {
-    width: 270px;
-    height: 261px;
-    padding: 0;
-    float: right;
-    text-align: left;
-    overflow: hidden;
+.slider {
+
 }
 
 .jsm {
@@ -238,12 +230,11 @@ input {
 }
 
 .slider {
-    width: 900px;
+    width: 950px;
     height: 290px;
     padding: 0;
     /*margin: 0 auto;*/
-    /*margin-top: 32px;*/
-    float: left;
+    margin-top: 32px;
 }
 
 .folio_block {
@@ -458,13 +449,11 @@ input {
     width: 237px;
     position: absolute;
     /*top:-727px;*/
-    z-index: 1000;
 
 }
 
 .left {
     /*margin-left:66px;*/
-    z-index: 1000;
 }
 
 .left_index {
@@ -769,6 +758,5 @@ input[type=button], .blue_button {
     position: relative;
     /*float: right;*/
     left: 4px;
-    top: -128px;
-    z-index: 1000;
+    top: -135px;
 }
