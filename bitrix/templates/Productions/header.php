@@ -13,14 +13,14 @@
 	<link rel="stylesheet" type="text/css" href="/bitrix/templates/Productions/css/style_ie.css"/>
 	<![endif]-->
 
-	<!--	<script type = "text/javascript" src = "/bitrix/templates/Productions/js/jquery-1.4.3.min.js"></script>-->
-	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type = "text/javascript" src = "/bitrix/templates/Productions/js/jquery-1.4.3.min.js"></script>
+<!--	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>-->
 	<!--	<script type = "text/javascript" src = "/include/jquery.ui-slider.js"></script>-->
 
 	<!--	<script type = "text/javascript" src = "/bitrix/templates/Productions/js/js.js"></script>-->
 	<script type="text/javascript" src="/bitrix/templates/Productions/js/tabs.js"></script>
 	<script type="text/javascript" src="/bitrix/templates/Productions/js/jcarousellite.min.js"></script>
-	<!--	<script type = "text/javascript" src = "/bitrix/templates/Productions/fancybox/jquery.fancybox-1.3.4.pack.js"></script>-->
+		<script type = "text/javascript" src = "/bitrix/templates/Productions/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 
 	<link rel="stylesheet" href="/bitrix/templates/Productions/css/cssf-base.css" type="text/css" media="screen"/>
 	<link rel="stylesheet" href="/bitrix/templates/Productions/css/main.css" type="text/css" media="screen"/>
@@ -35,8 +35,7 @@
 	<script type="text/javascript" src="/bitrix/templates/Productions/js/iepngfix_tilebg.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
-//					$(".fancy").fancybox();
-
+					$(".fancy").fancybox();
 		});
 	</script>
 	<!-- Yandex.Metrika counter -->
